@@ -205,13 +205,6 @@ _e('If you find this plugin useful to you, please consider making a small donati
 <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" style="border:none;" name="submit" alt="Paypal Donate" />
 <img alt="" style="border:none;" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </form>
-  </td><td>
-  <div style="width:305px;height:300px; float:left;background-color:white;padding: 10px 10px 10px 20px; border: 1px solid #ddd;">
-		<div>
-			<h3><?php _e('ThemeFuse Original WP Themes', 'si-captcha'); ?></h3>
-		</div>
-        <a href="http://themefuse.com/amember/aff/go?r=6664&i=46" target="_blank"><img src="http://themefuse.com/amember/file/get/path/.banners.505787138b254/i/6664" border=0 alt="300x250" width="300" height="250"></a>
-  </div>
   </td>
  </tr>
  </table>
