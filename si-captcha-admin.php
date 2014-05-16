@@ -440,7 +440,7 @@ foreach ($captcha_pos_array as $k => $v) {
     <br />
 
   <?php
-   if (function_exists('akismet_verify_key')) {
+   	if ( is_callable( array( 'Akismet', 'verify_key' ) ) || function_exists( 'akismet_verify_key' ) ) {
      if (!isset($_POST['si_captcha_akismet_check'])){
        echo '<span style="background-color:#99CC99; padding:4px;">'.
              __('Akismet is installed.', 'si-captcha'). '</strong></span>';
@@ -456,7 +456,10 @@ foreach ($captcha_pos_array as $k => $v) {
 		if ( empty( $key ) ) {
 			$key_status = 'empty';
 		} else {
-			$key_status = akismet_verify_key( $key );
+			if ( is_callable( array( 'Akismet', 'verify_key' ) ) )
+			     $key_status = Akismet::verify_key( $key );  // akismet 3.xx
+            else
+                 $key_status = akismet_verify_key( $key );  // akismet 2.xx
 		}
 		if ( $key_status == 'valid' ) {
 			echo '<span style="background-color:#99CC99; padding:4px;">'.
@@ -469,7 +472,7 @@ foreach ($captcha_pos_array as $k => $v) {
              __('Akismet plugin is installed but key failed to verify.', 'si-captcha'). '</span>';
 		}
     }
-         echo '<br/><a href="'.admin_url(  "plugins.php?page=akismet-key-config" ).'">'. __('Configure Akismet', 'si-captcha'). '</a>';
+         echo '<br/><a href="'.admin_url(  "options-general.php?page=akismet-key-config" ).'">'. __('Configure Akismet', 'si-captcha'). '</a>';
    }else{
      echo '<span style="background-color:#FFE991; padding:4px;">'.
             __('Akismet plugin is not installed or is deactivated.', 'si-captcha'). '</span>';

@@ -224,6 +224,8 @@ Please read [How to update a translation of SI Captcha Anti-Spam for WordPress](
 
 == Changelog ==
 
+- akismet 3.xx compatible
+
 = 2.7.7.4 =
 - (15 May 2014) - Removed themefuse ad
 - tested for WP 3.9.1
