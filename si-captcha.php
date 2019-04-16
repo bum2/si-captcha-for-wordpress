@@ -175,9 +175,10 @@ function si_captcha_perm_dropdown($select_name, $checked_value='') {
         // print the <select> and loop through <options>
         echo '<select name="' . esc_attr($select_name) . '" id="' . esc_attr($select_name) . '">' . "\n";
         foreach ($choices as $text => $capability) :
-                if ($capability == $checked_value) $checked = ' selected="selected" ';
+		if ($capability == $checked_value) $checked = ' selected="selected" ';
+	        else $checked = '';
                 echo "\t". '<option value="' . esc_attr($capability) . '"' . $checked . '>'.esc_html($text)."</option>\n";
-                $checked = '';
+                //$checked = '';
         endforeach;
         echo "\t</select>\n";
  } // end function si_captcha_perm_dropdown
@@ -1284,6 +1285,7 @@ else if (basename(dirname(__FILE__)) == "si-captcha-for-wordpress" && function_e
   if ($si_captcha_opt['si_captcha_register'] == 'true') {
     add_action('login_head', array( &$si_image_captcha, 'si_captcha_login_head') );
     add_action('register_form', array(&$si_image_captcha, 'si_captcha_register_form'), 10);
+    add_action('atcf_shortcode_register_after', array(&$si_image_captcha, 'si_captcha_register_form'), 10); // bumbum line
     add_filter('registration_errors', array(&$si_image_captcha, 'si_captcha_register_post'), 10);
   }
 
