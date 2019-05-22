@@ -27,6 +27,7 @@ if ( strpos(strtolower($_SERVER['SCRIPT_NAME']),strtolower(basename(__FILE__))) 
          'wpforo_register' =>       (isset( $_POST['si_captcha_wpforo_register'] ) ) ? 'true' : 'false',
          'lostpwd' =>               (isset( $_POST['si_captcha_lostpwd'] ) ) ? 'true' : 'false',
          'wc_checkout' =>           (isset( $_POST['si_captcha_wc_checkout'] ) ) ? 'true' : 'false',
+         'edd_checkout' =>           (isset( $_POST['si_captcha_edd_checkout'] ) ) ? 'true' : 'false',
          'jetpack' =>               (isset( $_POST['si_captcha_jetpack'] ) ) ? 'true' : 'false',
          'bbpress_topic' =>         (isset( $_POST['si_captcha_bbpress_topic'] ) ) ? 'true' : 'false',
          'bbpress_reply' =>         (isset( $_POST['si_captcha_bbpress_reply'] ) ) ? 'true' : 'false',
@@ -297,6 +298,14 @@ if (isset($api->version)) {
     <a style="cursor:pointer;" title="<?php esc_attr_e('Click for Help!', 'si-captcha'); ?>" onclick="toggleVisibility('si_captcha_wc_checkout_tip');"><?php _e('help', 'si-captcha'); ?></a>
     <div class="fscf_tip" id="si_captcha_wc_checkout_tip">
     <?php _e('Require that the user pass a CAPTCHA test on WooCommerce checkout form when not logged in.', 'si-captcha') ?>
+    </div>
+    <br />
+
+    <input name="si_captcha_edd_checkout" id="si_captcha_easydigitaldownloads" type="checkbox" <?php if ( $si_captcha_opt['edd_checkout'] == 'true' ) echo ' checked="checked" '; ?> />
+    <label for="si_captcha_edd_checkout"><?php _e('EasyDigitalDownloads checkout.', 'si-captcha') ?></label>
+    <a style="cursor:pointer;" title="<?php esc_attr_e('Click for Help!', 'si-captcha'); ?>" onclick="toggleVisibility('si_captcha_edd_checkout_tip');"><?php _e('help', 'si-captcha'); ?></a>
+    <div class="fscf_tip" id="si_captcha_edd_checkout_tip">
+    <?php _e('Require that the user pass a CAPTCHA test on EasyDigitalDownloads checkout form when not logged in.', 'si-captcha') ?>
     </div>
     <br />
 

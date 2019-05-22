@@ -909,7 +909,7 @@ echo '</div>
 <div style="display:inline-block; padding:5px 10px;">
  <label for="si_captcha_code" class="edd-label">';
   echo ($si_captcha_opt['label_captcha'] != '') ? $si_captcha_opt['label_captcha'] : __('CAPTCHA Code', 'si-captcha');
-  echo '</label>
+  echo ' <span class="edd-required-indicator">*</span> </label>
  <input id="si_captcha_code" name="si_captcha_code" class="edd-input" type="text" value="" />
 </div>
 </div>
