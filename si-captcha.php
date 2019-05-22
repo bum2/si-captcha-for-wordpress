@@ -2,16 +2,16 @@
 /*
 Plugin Name: SI Captcha Anti-Spam
 Plugin URI: https://wordpress.org/plugins/si-captcha-for-wordpress/
-Description: Adds Secure Image CAPTCHA to WordPress pages for comments, login, registration, lost password, BuddyPress register, bbPress register, wpForo register, bbPress New Topic and Reply to Topic Forms, Jetpack Contact Form, and WooCommerce checkout. In order to post comments, login, or register, users will have to pass the CAPTCHA test. Prevents spam from automated bots. Compatible with Akismet and Multisite Network Activate.
-Author: fastsecure
+Description: Adds Secure Image CAPTCHA to WordPress pages for comments, login, registration, lost password, BuddyPress register, bbPress register, wpForo register, bbPress New Topic and Reply to Topic Forms, Jetpack Contact Form, WooCommerce checkout, and EasyDigitalDownloads checkout. In order to post comments, login, or register, users will have to pass the CAPTCHA test. Prevents spam from automated bots. Compatible with Akismet and Multisite Network Activate.
+Author: MikeChallis, fastsecure, Otto42, bum2
 Author URI: http://www.642weather.com/weather/scripts.php
 Text Domain: si-captcha
 Domain Path: /languages
 License: GPLv2 or later
-Version: 3.0.3
+Version: 3.0.4
 */
 
-$si_captcha_version = '3.0.3';
+$si_captcha_version = '3.0.4';
 
 /*  Copyright (C) 2008-2017 Mike Challis  (http://www.642weather.com/weather/contact_us.php)
 

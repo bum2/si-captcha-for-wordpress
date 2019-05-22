@@ -1,19 +1,19 @@
 === SI CAPTCHA Anti-Spam ===
-Contributors: fastsecure
+Contributors: MikeChallis, fastsecure, Otto42, bum2
 Author URI: http://www.642weather.com/weather/scripts.php
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KXJWLPPWZG83S
-Tags: captcha, recaptcha, buddypress, bbpress, woocommerce, wpforo, multisite, jetpack, comment, comments, login, register, anti-spam, spam, security
+Tags: captcha, recaptcha, buddypress, bbpress, woocommerce, wpforo, multisite, jetpack, comment, comments, login, register, anti-spam, spam, security, edd
 Requires at least: 3.6.0
-Tested up to: 4.8
-Stable tag: 3.0.3
+Tested up to: 5.1.1
+Stable tag: 3.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adds Secure Image CAPTCHA on the forms for comments, login, registration, lost password, BuddyPress, bbPress, wpForo, and WooCommerce checkout.
+Adds Secure Image CAPTCHA on the forms for comments, login, registration, lost password, BuddyPress, bbPress, wpForo, WooCommerce checkout, and Easy Digital Downloads checkout.
 
 == Description ==
 
-Adds Secure Image CAPTCHA anti-spam to WordPress pages for comments, login, registration, lost password, BuddyPress register, bbPress register, wpForo register, bbPress New Topic and Reply to Topic Forms, Jetpack Contact Form, and WooCommerce checkout.
+Adds Secure Image CAPTCHA anti-spam to WordPress pages for comments, login, registration, lost password, BuddyPress register, bbPress register, wpForo register, bbPress New Topic and Reply to Topic Forms, Jetpack Contact Form, WooCommerce checkout, and EasyDigitalDownloads (EDD) checkout.
 In order to post comments, login, or register, users will have to pass the CAPTCHA test. This prevents spam from automated bots, adds security, and is even compatible Akismet. Compatible with Multisite Network Activate. 
 If you don't like image captcha and code entry, you can uninstall this plugin and try my new plugin [Fast Secure reCAPTCHA](https://wordpress.org/plugins/fast-secure-recaptcha/) 
 
@@ -29,10 +29,10 @@ Features:
  * Enable or disable the CAPTCHA on any of the pages for comments, login, registration, lost password, BuddyPress register, bbPress register, wpForo Register, Jetpack Contact Form, and WooCommerce checkout.
  * Login form - WordPress, BuddyPress, bbPress, wpForo Forum, WooCommerce, WP Multisite
  * Lost Password form - WordPress, BuddyPress, bbPress, wpForo Forum, WooCommerce, WP Multisite. 
- * Register form - WordPress, BuddyPress, bbPress, wpForo Forum, WooCommerce, WP Multisite.
+ * Register form - WordPress, BuddyPress, bbPress, wpForo Forum, WooCommerce, WP Multisite, EDD.
  * Comment form - WordPress, WP Multisite.  
  * Signup new site - WP Multisite.
- * Checkout form - WooCommerce.
+ * Checkout form - WooCommerce, EasyDigitalDownloads.
  * Jetpack Contact Form.
  * bbPress New Topic, Reply to Topic Forms.
  * You can disable any of the forms you don't want CAPTCHA on.
