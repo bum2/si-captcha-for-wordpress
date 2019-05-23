@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: SI Captcha Anti-Spam
-Plugin URI: https://wordpress.org/plugins/si-captcha-for-wordpress/
+Plugin URI: https://github.com/bum2/si-captcha-for-wordpress/
 Description: Adds Secure Image CAPTCHA to WordPress pages for comments, login, registration, lost password, BuddyPress register, bbPress register, wpForo register, bbPress New Topic and Reply to Topic Forms, Jetpack Contact Form, WooCommerce checkout, and EasyDigitalDownloads checkout. In order to post comments, login, or register, users will have to pass the CAPTCHA test. Prevents spam from automated bots. Compatible with Akismet and Multisite Network Activate.
-Author: MikeChallis, fastsecure, Otto42, bum2
-Author URI: http://www.642weather.com/weather/scripts.php
+Author: bumfresh
+Author URI: https://github.com/bum2
 Text Domain: si-captcha
 Domain Path: /languages
 License: GPLv2 or later
@@ -791,10 +791,10 @@ $html = '
 $html .= '
 </div>
 
-<label for="captcha_code_side_login">';
+<label for="captcha_code_side_login" class="edd-label">';
   $html .= ($si_captcha_opt['label_captcha'] != '') ? $si_captcha_opt['label_captcha'] : __('CAPTCHA Code', 'si-captcha');
   $html .= '</label>
-<input id="captcha_code_side_login" name="si_captcha_code" class="input" type="text" value="" />
+<input id="captcha_code_side_login" name="si_captcha_code" class="edd-input" type="text" value="" />
 </div>
 
 ';
@@ -921,10 +921,10 @@ echo '</div>
 return true;
 } // end function si_captcha_edd_checkout_form
 
-// this function checks the captcha posted with easy-digital-downloads checkout page // bumbum
+// this function checks the captcha posted with easy-digital-downloads checkout // bumbum: it don't work, use the outer si_captcha_edd_checkout_post2
 function si_captcha_edd_checkout_post() {
    global $si_captcha_dir, $si_captcha_dir_ns, $si_captcha_opt, $si_captcha_checkout_validated;
-   error_log('----- hol edd -----');
+   error_log('----- hola edd -----');
    if ($si_captcha_opt['edd_checkout'] == 'true' ) {
       $validate_result = $this->si_captcha_validate_code('checkout', 'unlink');
       if($validate_result != 'valid') {
@@ -957,7 +957,7 @@ echo '>';
 $this->si_captcha_captcha_html('si_image_reg','reg');
 echo '</div>
 
-<p>
+<p class="si_captcha_label">
  <label for="si_captcha_code">';
   echo ($si_captcha_opt['label_captcha'] != '') ? $si_captcha_opt['label_captcha'] : __('CAPTCHA Code', 'si-captcha');
   echo '<br />
