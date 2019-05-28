@@ -125,7 +125,7 @@ function si_captcha_init() {
         add_action('woocommerce_register_form', array($this, 'si_captcha_register_form'), 70);
 	add_filter('woocommerce_registration_errors', array($this, 'si_captcha_register_post'), 10, 3);
 	//add_action('atcf_shortcode_register_after', array($this, 'si_captcha_register_form'), 10); // bumbum
-	//add_filter('edd_checkout_error_checks', array($this, 'si_captcha_register_post'), 20, 3); // bumbum
+	add_filter('atcf_register_validate', array($this, 'si_captcha_register_post'), 20, 3); // bumbum
         add_action('register_form', array($this, 'si_captcha_register_form'), 99);
         add_filter('registration_errors', array($this, 'si_captcha_register_post'), 10, 3);
         add_action('login_footer', array($this, 'si_captcha_add_script'), 10);
@@ -977,7 +977,6 @@ echo '</div>
 // this function checks the captcha posted with registration page
 function si_captcha_register_post( $errors = '' ) {
    global $si_captcha_dir, $si_captcha_dir_ns, $si_captcha_opt, $si_captcha_checkout_validated;
-
    if ( ! is_wp_error( $errors ) )
           $errors = new WP_Error();
 
@@ -989,6 +988,8 @@ function si_captcha_register_post( $errors = '' ) {
    if($validate_result != 'valid') {
        $error = ($si_captcha_opt['error_error'] != '') ? $si_captcha_opt['error_error'] : __('ERROR', 'si-captcha');
        $errors->add('si_captcha_error', "<strong>$error</strong>: $validate_result");
+       if ( function_exists('edd_set_error') ) 
+           edd_set_error( 'captcha_error', $validate_result );
    }
    return $errors;
 } // end function si_captcha_register_post
