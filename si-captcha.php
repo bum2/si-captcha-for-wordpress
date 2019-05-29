@@ -156,7 +156,6 @@ function si_captcha_init() {
      }
 
      // EDD checkout form // bumbum
-     //add_action('edd_purchase_form_before_submit', array($this, 'si_captcha_wc_checkout_form'), 99 );
      add_action('edd_purchase_form_after_cc_form', array($this, 'si_captcha_edd_checkout_form'), 99 );
      //add_action('edd_process_checkout', 'si_captcha_edd_checkout_post2' );
      //add_action('edd_ajax_checkout_errors', array($this, 'si_captcha_edd_checkout_post') );
@@ -986,10 +985,13 @@ function si_captcha_register_post( $errors = '' ) {
 
    $validate_result = $this->si_captcha_validate_code('reg', 'unlink');
    if($validate_result != 'valid') {
-       $error = ($si_captcha_opt['error_error'] != '') ? $si_captcha_opt['error_error'] : __('ERROR', 'si-captcha');
+       $error = ($si_captcha_opt['error_error'] != '') ? $si_captcha_opt['error_error'] : ''; //__('ERROR', 'si-captcha');
        $errors->add('si_captcha_error', "<strong>$error</strong>: $validate_result");
-       if ( function_exists('edd_set_error') ) 
-           edd_set_error( 'captcha_error', $validate_result );
+       if ( function_exists('edd_set_error') ) {
+           //edd_set_error( 'captcha_error', $validate_result );
+       } else {
+           //$errors->add('si_captcha_error', "<strong>$error</strong>: $validate_result");
+       }
    }
    return $errors;
 } // end function si_captcha_register_post
@@ -1530,7 +1532,7 @@ if (isset($si_captcha)) {
 
 }
 
-// this function checks the captcha posted with easy-digital-downloads checkout page
+// this function checks the captcha posted with easy-digital-downloads checkout page // bumbum
 function si_captcha_edd_checkout_post2() {
    global $si_captcha, $si_captcha_dir, $si_captcha_dir_ns, $si_captcha_opt, $si_captcha_checkout_validated;
    //error_log('----- hol edd 2 -----');
@@ -1549,7 +1551,7 @@ function si_captcha_edd_checkout_post2() {
      }
    }
    return;
-} // function si_captcha_edd_checkout_post
+} // function si_captcha_edd_checkout_post2
 add_action('edd_checkout_error_checks', 'si_captcha_edd_checkout_post2' );
 
 // end of file
